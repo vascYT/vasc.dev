@@ -1,2 +1,3 @@
 # vasc.dev
- My person website built with Astro 🚀
+
+My personal website built with Astro 🚀

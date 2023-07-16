@@ -1,5 +1,5 @@
 {
-  "name": "@example/basics",
+  "name": "vasc.dev",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -10,16 +10,19 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/react": "^1.1.2",
-    "@astrojs/tailwind": "^1.0.0",
-    "astro": "^1.2.1",
-    "framer-motion": "^7.3.2",
+    "@astrojs/react": "^2.2.1",
+    "@astrojs/tailwind": "^4.0.0",
+    "@fontsource-variable/inter": "^5.0.5",
+    "astro": "^2.8.3",
+    "framer-motion": "^10.12.21",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
-    "react-icons": "^4.4.0",
-    "use-lanyard": "^1.2.0"
+    "react-icons": "^4.10.1",
+    "tailwindcss": "^3.0.24",
+    "use-lanyard": "^1.4.4"
   },
   "devDependencies": {
-    "@types/react": "^18.0.19"
+    "@types/react": "^18.0.21",
+    "@types/react-dom": "^18.0.6"
   }
 }

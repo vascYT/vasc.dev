@@ -46,7 +46,7 @@ export default function SocialGallery() {
         {links.map((link) => (
           <a
             href={link.url}
-            className="transition-transform hover:scale-105"
+            className="transition-transform active:scale-125"
             target={link.newTab ? "_blank" : undefined}
             rel={link.rel}
             key={link.url}

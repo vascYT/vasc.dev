@@ -17,6 +17,7 @@ function Card(props: {
   return (
     <motion.div
       animate={{ height: open ? "auto" : "178px" }}
+      transition={{ type: "spring", damping: 20, stiffness: 175 }}
       className="bg-white bg-opacity-10 border border-white border-opacity-20 rounded-md w-full shadow"
     >
       <img
@@ -74,13 +75,16 @@ const projects = [
   {
     name: "VShop for Valorant",
     description:
-      "A React Native app that shows the Valorant in-game shop. Available for IOS and Android.",
+      "A React Native app that shows the Valorant in-game shop. Available for Android.",
     thumbnail: "/assets/vshop-banner.png",
-    buttons: [{ name: "Website", url: "https://vshop.one/" }],
+    buttons: [
+      { name: "Website", url: "https://vshop.one/" },
+      { name: "GitHub", url: "https://github.com/VShopApp" },
+    ],
   },
   {
     name: "PresenceDB",
-    description: "Tracks your Discord activities.",
+    description: "Tracks your Discord activities via a Discord bot.",
     thumbnail: "/assets/presencedb-banner.jpg",
     buttons: [
       { name: "Website", url: "https://presencedb.com/" },

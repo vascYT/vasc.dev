@@ -12,7 +12,7 @@ import {
   SiVisualstudiocode,
   SiNextdotjs,
   SiAstro,
-} from "react-icons/si";
+} from "react-icons/si/index";
 import { motion } from "framer-motion";
 
 const initialData = [

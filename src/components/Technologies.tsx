@@ -13,8 +13,8 @@ import {
   SiNextdotjs,
   SiAstro,
 } from "react-icons/si/index";
+import { IoIosArrowDown } from "react-icons/io/index";
 import { motion } from "framer-motion";
-import { IoIosArrowDown } from "react-icons/io";
 
 const initialData = [
   { name: "Code", icon: SiVisualstudiocode },

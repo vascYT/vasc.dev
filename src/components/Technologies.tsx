@@ -14,7 +14,7 @@ import {
   SiAstro,
 } from "react-icons/si/index";
 import { motion } from "framer-motion";
-import { isMobile } from "react-device-detect";
+import { IoIosArrowDown } from "react-icons/io";
 
 const initialData = [
   { name: "Code", icon: SiVisualstudiocode },
@@ -39,16 +39,9 @@ const initialData = [
 function Technology({ item }: { item: (typeof initialData)[0] }) {
   const [open, setOpen] = useState(false);
 
-  const toggleOpen = () => setOpen((current) => !current);
-
   return (
     <motion.div
       className="bg-white/10 border border-white/20 rounded-md w-full shadow overflow-hidden"
-      onMouseEnter={toggleOpen}
-      onMouseLeave={toggleOpen}
-      onClick={() => {
-        if (isMobile) toggleOpen();
-      }}
       initial={{ height: "41px" }}
       animate={{ height: open ? "auto" : "41px" }}
       transition={{
@@ -57,10 +50,21 @@ function Technology({ item }: { item: (typeof initialData)[0] }) {
         stiffness: 225,
       }}
     >
-      <div className="flex items-center space-x-2 px-3 py-2">
-        <item.icon className="w-5 h-5" />
-        <p>{item.name}</p>
+      <div className="flex items-center justify-between">
+        <div className="flex items-center space-x-2 px-3 py-2">
+          <item.icon className="w-5 h-5" />
+          <p>{item.name}</p>
+        </div>
+        <button
+          className="hover:bg-white/10 p-1 mr-1 rounded-full"
+          onClick={() => setOpen(!open)}
+        >
+          <IoIosArrowDown
+            className={`transition-transform ${open && "rotate-180"}`}
+          />
+        </button>
       </div>
+
       <div className="border-t border-t-white/20 p-3 text-sm">
         {item.repos ? (
           item.repos.length > 0 ? (

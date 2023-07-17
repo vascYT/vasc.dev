@@ -1,11 +1,11 @@
-import { useLanyard } from "use-lanyard";
+import { useLanyardWS } from "use-lanyard";
 
 /* 
     Thanks to https://github.com/iGalaxyYT/igalaxy.dev/blob/main/components/Lanyard.tsx for the help :)
 */
 
 export default function DiscordActivity() {
-  const { data: activity } = useLanyard("346977366569910274");
+  const activity = useLanyardWS("346977366569910274");
 
   if (
     !activity ||

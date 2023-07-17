@@ -1,4 +1,4 @@
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { useState } from "react";
 import { FiExternalLink } from "react-icons/fi/index";
 import { IoIosArrowDown } from "react-icons/io/index";
@@ -16,9 +16,14 @@ function Card(props: {
 
   return (
     <motion.div
+      initial={{ height: "178px" }}
       animate={{ height: open ? "auto" : "178px" }}
-      transition={{ type: "spring", damping: 20, stiffness: 175 }}
-      className="bg-white bg-opacity-10 border border-white border-opacity-20 rounded-md w-full shadow"
+      transition={{
+        type: "spring",
+        damping: 20,
+        stiffness: 225,
+      }}
+      className="bg-white/10 border border-white/20 rounded-md w-full shadow overflow-hidden"
     >
       <img
         src={props.thumbnail}
@@ -40,33 +45,23 @@ function Card(props: {
           />
         </button>
       </div>
-      <AnimatePresence>
-        {open && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.2 }}
-            className="mb-3 border-t border-white/20 px-4"
-          >
-            <p className="text-gray-300 mt-3">{props.description}</p>
-            <div className="flex flex-row items-center space-x-2">
-              {props.buttons.map((button, i) => (
-                <a
-                  key={i}
-                  className="flex items-center w-fit space-x-1 bg-white bg-opacity-20 rounded-full px-5 py-2 text-sm mt-3 transition-transform hover:scale-[102%]"
-                  href={button.url}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <span>{button.name}</span>
-                  <FiExternalLink />
-                </a>
-              ))}
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      <div className="mb-3 border-t border-white/20 px-4">
+        <p className="text-gray-300 mt-3">{props.description}</p>
+        <div className="flex flex-row items-center space-x-2">
+          {props.buttons.map((button, i) => (
+            <a
+              key={i}
+              className="flex items-center w-fit space-x-1 bg-white bg-opacity-20 rounded-full px-5 py-2 text-sm mt-3 transition-transform hover:scale-[102%]"
+              href={button.url}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <span>{button.name}</span>
+              <FiExternalLink />
+            </a>
+          ))}
+        </div>
+      </div>
     </motion.div>
   );
 }

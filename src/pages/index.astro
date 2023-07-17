@@ -3,22 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import DiscordActivity from "../components/DiscordActivity";
 import Projects from "../components/Projects";
 import Age from "../components/Age";
-import Technology from "../components/Technology";
-
-import {
-  SiTypescript,
-  SiNodedotjs,
-  SiDocker,
-  SiReact,
-  SiYarn,
-  SiTailwindcss,
-  SiGit,
-  SiRedis,
-  SiPostgresql,
-  SiVisualstudiocode,
-  SiNextdotjs,
-} from "react-icons/si/index";
-import { RiRocketFill } from "react-icons/ri/index";
+import Technologies from "../components/Technologies";
 ---
 
 <Layout title="Hey, I'm vasc">
@@ -63,24 +48,11 @@ import { RiRocketFill } from "react-icons/ri/index";
       <div class="text-base leading-relaxed mt-5 mb-5">
         <h1 class="text-3xl font-bold">What I Use 🧑‍💻</h1>
         <p class="text-gray-300 mt-2">
-          There are a lot of different technologies that allow me to make my
-          projects real. I love to experiment with new stuff, such as Astro,
-          which I used to build this website.
+          There are a lot of different technologies that allow me to realize my
+          projects. I love to experiment with new stuff, such as Astro, which I
+          used to build this website.
         </p>
-        <div class="grid grid-cols-3 md:grid-cols-4 grid-flow-row gap-2 mt-3">
-          <Technology name="Typescript" Icon={SiTypescript} />
-          <Technology name="Node.js" Icon={SiNodedotjs} />
-          <Technology name="Docker" Icon={SiDocker} />
-          <Technology name="React.js" Icon={SiReact} />
-          <Technology name="Next.js" Icon={SiNextdotjs} />
-          <Technology name="Astro" Icon={RiRocketFill} />
-          <Technology name="Yarn" Icon={SiYarn} />
-          <Technology name="TailwindCSS" Icon={SiTailwindcss} />
-          <Technology name="Git" Icon={SiGit} />
-          <Technology name="Redis" Icon={SiRedis} />
-          <Technology name="Postgres" Icon={SiPostgresql} />
-          <Technology name="Code" Icon={SiVisualstudiocode} />
-        </div>
+        <Technologies client:load />
       </div>
 
       <div class="mt-5 mb-5">
@@ -89,7 +61,7 @@ import { RiRocketFill } from "react-icons/ri/index";
           I built a lot of things, most of them private. If you want to see all
           my public & open source projects, check out my <a
             href="https://github.com/vascyt"
-            class="text-yellow-400 hover:underline"
+            class="text-yellow-400 underline underline-offset-4"
             target="_blank">GitHub profile</a
           >. Below you can find some of my biggest projects.
         </p>

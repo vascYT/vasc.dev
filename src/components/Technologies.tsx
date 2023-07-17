@@ -14,6 +14,7 @@ import {
   SiAstro,
 } from "react-icons/si/index";
 import { motion } from "framer-motion";
+import { isMobile } from "react-device-detect";
 
 const initialData = [
   { name: "Code", icon: SiVisualstudiocode },
@@ -45,7 +46,9 @@ function Technology({ item }: { item: (typeof initialData)[0] }) {
       className="bg-white/10 border border-white/20 rounded-md w-full shadow overflow-hidden"
       onMouseEnter={toggleOpen}
       onMouseLeave={toggleOpen}
-      onTouchEnd={toggleOpen}
+      onClick={() => {
+        if (isMobile) toggleOpen();
+      }}
       initial={{ height: "41px" }}
       animate={{ height: open ? "auto" : "41px" }}
       transition={{
@@ -61,7 +64,7 @@ function Technology({ item }: { item: (typeof initialData)[0] }) {
       <div className="border-t border-t-white/20 p-3 text-sm">
         {item.repos ? (
           item.repos.length > 0 ? (
-            <ul>
+            <ul className="space-y-1">
               {item.repos.map((repo) => (
                 <li>
                   <a

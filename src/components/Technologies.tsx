@@ -82,7 +82,7 @@ function Technology({ item }: { item: (typeof initialData)[0] }) {
               ))}
             </ul>
           ) : (
-            <p>Not used in any public project.</p>
+            <p>Used in private/closed source projects.</p>
           )
         ) : (
           <p>Used in every project.</p>

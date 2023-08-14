@@ -24,7 +24,7 @@ jobs:
         uses: withastro/action@v0
         with:
           node-version: 18
-          package-manager: pnpm
+          package-manager: npm # Until astro releases support for pnpm 8
 
   deploy:
     needs: build

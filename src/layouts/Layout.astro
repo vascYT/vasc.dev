@@ -19,8 +19,8 @@ const { title } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body class="bg-gradient-to-br from-black to-[#303030] text-white font-sans">
-    <div class="flex flex-row justify-center min-h-screen md:p-0">
+  <body class="bg-gradient-to-br from-black to-[#303030] font-sans text-white">
+    <div class="flex min-h-screen flex-row justify-center md:p-0">
       <div class="w-full md:w-[800px]">
         <Navbar />
         <PageAnimation client:load>

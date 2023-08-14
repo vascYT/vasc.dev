@@ -42,7 +42,7 @@ const links = [
 export default function SocialGallery() {
   return (
     <>
-      <div className="inline-flex h-full space-x-4 flex-auto text-2xl">
+      <div className="inline-flex h-full flex-auto space-x-4 text-2xl">
         {links.map((link) => (
           <a
             href={link.url}

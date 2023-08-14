@@ -23,21 +23,21 @@ function Card(props: {
         damping: 20,
         stiffness: 225,
       }}
-      className="bg-white/10 border border-white/20 rounded-md w-full shadow overflow-hidden"
+      className="w-full overflow-hidden rounded-md border border-white/20 bg-white/10 shadow"
     >
       <img
         src={props.thumbnail}
         alt={`${props.title} thumbnail`}
-        className="w-full h-[128px] object-cover object-top rounded-t-md"
+        className="h-[128px] w-full rounded-t-md object-cover object-top"
       />
       <div className="flex items-center px-4">
         <div className="w-full">
-          <div className="flex items-center space-x-3 h-[50px]">
+          <div className="flex h-[50px] items-center space-x-3">
             <h1 className="text-lg font-medium">{props.title}</h1>
           </div>
         </div>
         <button
-          className="hover:bg-white/10 p-2 rounded-full"
+          className="rounded-full p-2 hover:bg-white/10"
           onClick={() => setOpen(!open)}
         >
           <IoIosArrowDown
@@ -46,12 +46,12 @@ function Card(props: {
         </button>
       </div>
       <div className="mb-3 border-t border-white/20 px-4">
-        <p className="text-gray-300 mt-3">{props.description}</p>
+        <p className="mt-3 text-gray-300">{props.description}</p>
         <div className="flex flex-row items-center space-x-2">
           {props.buttons.map((button, i) => (
             <a
               key={i}
-              className="flex items-center w-fit space-x-1 bg-white bg-opacity-20 rounded-full px-5 py-2 text-sm mt-3 transition-transform hover:scale-[102%]"
+              className="mt-3 flex w-fit items-center space-x-1 rounded-full bg-white bg-opacity-20 px-5 py-2 text-sm transition-transform hover:scale-[102%]"
               href={button.url}
               target="_blank"
               rel="noreferrer"
@@ -91,7 +91,7 @@ const projects = [
 export default function Projects() {
   return (
     <>
-      <div className="grid md:grid-cols-2 gap-4">
+      <div className="grid gap-4 md:grid-cols-2">
         {projects.map((project, i) => (
           <Card
             key={i}

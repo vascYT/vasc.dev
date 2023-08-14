@@ -4,7 +4,7 @@ const links = ["/"];
 
 function Item(props: { link: string }) {
   return (
-    <a href={props.link} className="rounded-xl hover:underline p-2">
+    <a href={props.link} className="rounded-xl p-2 hover:underline">
       {props.link}
     </a>
   );
@@ -12,7 +12,7 @@ function Item(props: { link: string }) {
 
 export default function Navbar() {
   return (
-    <div className="flex text-white w-full pl-6 pr-6 pt-8 pb-8">
+    <div className="flex w-full pl-6 pr-6 pt-8 pb-8 text-white">
       <div className="w-full space-x-6">
         {links.map((link) => (
           <Item link={link} key={link} />

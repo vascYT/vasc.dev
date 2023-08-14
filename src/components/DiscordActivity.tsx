@@ -15,12 +15,12 @@ export default function DiscordActivity() {
     return <></>;
 
   return (
-    <div className="flex flex-row items-center space-x-2 mt-3">
-      <div className="animate-pulse h-2 w-2 rounded-full bg-green-300"></div>
-      <span className="text-green-300 text-sm">
+    <div className="mt-3 flex flex-row items-center space-x-2">
+      <div className="h-2 w-2 animate-pulse rounded-full bg-green-300"></div>
+      <span className="text-sm text-green-300">
         {activity.listening_to_spotify ? (
           <>
-            Listening to <span className="font-bold mr-[1.5px]">`</span>
+            Listening to <span className="mr-[1.5px] font-bold">`</span>
             <a
               href={`https://open.spotify.com/track/${activity.spotify?.track_id}`}
               className="hover:underline"
@@ -29,7 +29,7 @@ export default function DiscordActivity() {
             >
               {activity.spotify?.song}
             </a>
-            <span className="font-bold ml-[1.5px]">`</span>
+            <span className="ml-[1.5px] font-bold">`</span>
           </>
         ) : (
           `Playing ${activity.activities[0].name}`

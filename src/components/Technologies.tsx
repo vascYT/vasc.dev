@@ -41,7 +41,7 @@ function Technology({ item }: { item: (typeof initialData)[0] }) {
 
   return (
     <motion.div
-      className="bg-white/10 border border-white/20 rounded-md w-full shadow overflow-hidden"
+      className="w-full overflow-hidden rounded-md border border-white/20 bg-white/10 shadow"
       initial={{ height: "41px" }}
       animate={{ height: open ? "auto" : "41px" }}
       transition={{
@@ -52,11 +52,11 @@ function Technology({ item }: { item: (typeof initialData)[0] }) {
     >
       <div className="flex items-center justify-between">
         <div className="flex items-center space-x-2 px-3 py-2">
-          <item.icon className="w-5 h-5" />
+          <item.icon className="h-5 w-5" />
           <p>{item.name}</p>
         </div>
         <button
-          className="hover:bg-white/10 p-1 mr-1 rounded-full"
+          className="mr-1 rounded-full p-1 hover:bg-white/10"
           onClick={() => setOpen(!open)}
         >
           <IoIosArrowDown
@@ -109,12 +109,12 @@ export default function Technologies() {
           }
         }
         setData([...newData]);
-      })
+      }),
     );
   }, []);
 
   return (
-    <div className="grid md:grid-cols-4 gap-3 mt-3">
+    <div className="mt-3 grid gap-3 md:grid-cols-4">
       {data.map((item, i) => (
         <Technology key={i} item={item} />
       ))}

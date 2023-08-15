@@ -5,9 +5,10 @@ import PageAnimation from "../components/PageAnimation";
 
 export interface Props {
   title: string;
+  description?: string;
 }
 
-const { title } = Astro.props;
+const { title, description } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -17,14 +18,23 @@ const { title } = Astro.props;
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/png" href="/assets/favicon.png" />
     <meta name="generator" content={Astro.generator} />
+    <meta property="og:title" content={title} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={Astro.url.href} />
+    {description && <meta property="og:description" content={description} />}
+    <meta name="theme-color" content="#FF9C17" />
     <title>{title}</title>
   </head>
-  <body class="bg-gradient-to-br from-black to-[#303030] font-sans text-white">
+  <body
+    class="bg-gradient-to-br from-neutral-900 to-neutral-950 font-sans text-white"
+  >
     <div class="flex min-h-screen flex-row justify-center md:p-0">
       <div class="w-full md:w-[800px]">
         <Navbar />
         <PageAnimation client:load>
-          <slot />
+          <main>
+            <slot />
+          </main>
         </PageAnimation>
       </div>
     </div>

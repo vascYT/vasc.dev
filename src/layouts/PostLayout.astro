@@ -1,0 +1,22 @@
+---
+import "@fontsource/fira-mono";
+import Layout from "./Layout.astro";
+const { title, description, date } = Astro.props.frontmatter;
+---
+
+<Layout title={`${title} • vasc.dev`} description={description}>
+  <div class="mb-7 mt-3">
+    <h1 class="text-4xl font-bold tracking-tight sm:text-5xl">
+      {title}
+    </h1>
+    <div class="mt-2 text-gray-300">
+      <p>{description}</p>
+      <p class="text-sm italic">
+        Posted on {new Date(date).toLocaleDateString()}
+      </p>
+    </div>
+  </div>
+  <article class="prose prose-invert font-fira">
+    <slot />
+  </article>
+</Layout>

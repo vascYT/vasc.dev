@@ -7,67 +7,65 @@ import Technologies from "../components/Technologies";
 ---
 
 <Layout title="Hey, I'm vasc">
-  <main>
-    <div class="mt-6">
-      <div class="sm:flex sm:items-center sm:space-x-5">
-        <img
-          src="https://avatars.githubusercontent.com/u/39592306"
-          width={125}
-          height={125}
-          alt="vasc's avatar"
-          class="rounded-full"
-        />
-        <div>
-          <div class="text-5xl font-bold tracking-tight sm:text-6xl">
-            <span>Hey, I&apos;m</span>
-            <span
-              class="bg-gradient-to-r from-yellow-400 to-yellow-600 bg-clip-text text-transparent"
-            >
-              vasc
-            </span>
-          </div>
-          <DiscordActivity client:load />
+  <div class="mt-6">
+    <div class="sm:flex sm:items-center sm:space-x-5">
+      <img
+        src="https://avatars.githubusercontent.com/u/39592306"
+        width={125}
+        height={125}
+        alt="vasc's avatar"
+        class="rounded-full"
+      />
+      <div>
+        <div class="text-5xl font-bold tracking-tight sm:text-6xl">
+          <span>Hey, I&apos;m</span>
+          <span
+            class="bg-gradient-to-r from-yellow-400 to-yellow-600 bg-clip-text text-transparent"
+          >
+            vasc
+          </span>
         </div>
-      </div>
-
-      <div class="mt-5 text-base leading-relaxed text-gray-300">
-        <p>
-          I&apos;m a <Age client:load /> y/o software engineer from Vienna,
-          Austria{" "}
-          <img
-            src="/assets/austria.svg"
-            class="inline-flex w-5 rounded-sm"
-            alt="Austrian Flag"
-          />
-           . I develop frontend software (e.g. websites) and backend software. I
-          also love to explore new technologies and tools made by others.
-        </p>
-      </div>
-
-      <div class="mt-5 mb-5 text-base leading-relaxed">
-        <h1 class="text-3xl font-bold">What I Use 🧑‍💻</h1>
-        <p class="mt-2 text-gray-300">
-          There are a lot of different technologies that allow me to realize my
-          projects. I love to experiment with new stuff, such as Astro, which I
-          used to build this website.
-        </p>
-        <Technologies client:load />
-      </div>
-
-      <div class="mt-5 mb-5">
-        <h1 class="text-3xl font-bold">What I Built 🔨</h1>
-        <p class="mt-2 text-gray-300">
-          I built a lot of things, most of them private. If you want to see all
-          my public & open source projects, check out my <a
-            href="https://github.com/vascyt"
-            class="text-yellow-400 underline underline-offset-4"
-            target="_blank">GitHub profile</a
-          >. Below you can find some of my biggest projects.
-        </p>
-        <div class="mt-3">
-          <Projects client:load />
-        </div>
+        <DiscordActivity client:load />
       </div>
     </div>
-  </main>
+
+    <div class="mt-5 text-base leading-relaxed text-gray-300">
+      <p>
+        I&apos;m a <Age client:load /> y/o software engineer from Vienna,
+        Austria{" "}
+        <img
+          src="/assets/austria.svg"
+          class="inline-flex w-5 rounded-sm"
+          alt="Austrian Flag"
+        />
+         . I develop frontend software (e.g. websites) and backend software. I
+        also love to explore new technologies and tools made by others.
+      </p>
+    </div>
+
+    <div class="mt-5 mb-5 text-base leading-relaxed">
+      <h1 class="text-3xl font-bold">What I Use 🧑‍💻</h1>
+      <p class="mt-2 text-gray-300">
+        There are a lot of different technologies that allow me to realize my
+        projects. I love to experiment with new stuff, such as Astro, which I
+        used to build this website.
+      </p>
+      <Technologies client:load />
+    </div>
+
+    <div class="mt-5 mb-5">
+      <h1 class="text-3xl font-bold">What I Built 🔨</h1>
+      <p class="mt-2 text-gray-300">
+        I built a lot of things, most of them private. If you want to see all my
+        public & open source projects, check out my <a
+          href="https://github.com/vascyt"
+          class="text-yellow-400 underline underline-offset-4"
+          target="_blank">GitHub profile</a
+        >. Below you can find some of my biggest projects.
+      </p>
+      <div class="mt-3">
+        <Projects client:load />
+      </div>
+    </div>
+  </div>
 </Layout>

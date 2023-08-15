@@ -1,0 +1,37 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { MdOutlineKeyboardArrowRight } from "react-icons/md/index";
+const posts = (await Astro.glob("./*.md")).filter(
+  (post) => !post.frontmatter.hidden,
+);
+---
+
+<Layout title="Posts • vasc.dev" description="Random stuff I want to share">
+  <h1 class="mb-5 mt-3 text-4xl font-bold tracking-tight sm:text-5xl">Posts</h1>
+  <div class="flex flex-col gap-3">
+    {
+      posts.map((post) => (
+        <a
+          class="flex w-full items-center justify-between rounded-md border border-white/20 bg-white/10 px-3 py-4"
+          href={post.url}
+        >
+          <div>
+            <h2 class="text-xl font-bold">{post.frontmatter.title}</h2>
+            <p class="text-sm font-light">
+              {post.frontmatter.description} -
+              <span class="italic">
+                {new Date(post.frontmatter.date).toLocaleDateString()}
+              </span>
+            </p>
+          </div>
+          <MdOutlineKeyboardArrowRight className="w-6 h-6" />
+        </a>
+      ))
+    }
+    {
+      posts.length === 0 && (
+        <p class="text-center text-sm text-gray-300">No posts yet 😢</p>
+      )
+    }
+  </div>
+</Layout>

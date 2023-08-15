@@ -7,4 +7,11 @@ import react from "@astrojs/react";
 export default defineConfig({
   site: "https://vasc.dev/",
   integrations: [tailwind(), react()],
+  markdown: {
+    shikiConfig: {
+      theme: "dark-plus",
+      wrap: true,
+    },
+    syntaxHighlight: "shiki",
+  },
 });

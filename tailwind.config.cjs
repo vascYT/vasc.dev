@@ -4,6 +4,7 @@ module.exports = {
   theme: {
     fontFamily: {
       sans: ["Inter Variable", "sans-serif"],
+      fira: ["Fira Mono", "sans-serif"],
     },
     extend: {
       spacing: {
@@ -20,5 +21,5 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/typography")],
 };

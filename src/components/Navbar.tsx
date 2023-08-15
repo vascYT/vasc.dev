@@ -1,6 +1,6 @@
 import Socials from "./Socials";
 
-const links = ["/"];
+const links = ["/", "/posts"];
 
 function Item(props: { link: string }) {
   return (

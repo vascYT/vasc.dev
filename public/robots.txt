@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://vasc.dev/sitemap-index.xml

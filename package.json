@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@astrojs/react": "^2.2.1",
+    "@astrojs/sitemap": "^2.0.1",
     "@astrojs/tailwind": "^4.0.0",
     "@fontsource-variable/inter": "^5.0.5",
     "@fontsource/fira-mono": "^5.0.8",

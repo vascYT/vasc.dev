@@ -21,14 +21,18 @@ export default function DiscordActivity() {
         {activity.listening_to_spotify ? (
           <>
             Listening to <span className="mr-[1.5px] font-bold">`</span>
-            <a
-              href={`https://open.spotify.com/track/${activity.spotify?.track_id}`}
-              className="hover:underline"
-              target="_blank"
-              rel="noreferrer"
-            >
-              {activity.spotify?.song}
-            </a>
+            {activity.spotify?.track_id != null ? (
+              <a
+                href={`https://open.spotify.com/track/${activity.spotify?.track_id}`}
+                className="hover:underline"
+                target="_blank"
+                rel="noreferrer"
+              >
+                {activity.spotify?.song}
+              </a>
+            ) : (
+              activity.spotify?.song
+            )}
             <span className="ml-[1.5px] font-bold">`</span>
           </>
         ) : (

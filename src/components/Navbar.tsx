@@ -1,6 +1,6 @@
 import Socials from "./Socials";
 
-const links = ["/", "/posts"];
+const links = ["/"];
 
 function Item(props: { link: string }) {
   return (
@@ -12,7 +12,7 @@ function Item(props: { link: string }) {
 
 export default function Navbar() {
   return (
-    <div className="flex w-full pl-6 pr-6 pt-8 pb-8 text-white">
+    <div className="flex w-full pb-8 pl-6 pr-6 pt-8 text-white">
       <div className="w-full space-x-6">
         {links.map((link) => (
           <Item link={link} key={link} />

@@ -1,6 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import DiscordActivity from "../components/DiscordActivity";
+import SpotifyActivity from "../components/SpotifyActivity";
 import Projects from "../components/Projects";
 import Age from "../components/Age";
 import Technologies from "../components/Technologies";
@@ -10,55 +10,52 @@ import Technologies from "../components/Technologies";
   title="Hey, I'm vasc"
   description="A software engineer from Vienna, Austria."
 >
-  <div class="mt-6">
-    <div class="sm:flex sm:items-center sm:space-x-5">
+  <div class="my-5 grid grid-cols-1 gap-5 sm:grid-cols-2 [&>*]:min-h-[200px]">
+    <div
+      class="flex flex-col items-stretch rounded-3xl border border-white/10 bg-white/5 sm:col-span-2 sm:flex-row"
+    >
       <img
         src="https://avatars.githubusercontent.com/u/39592306"
-        width={125}
-        height={125}
         alt="vasc's avatar"
-        class="rounded-full"
+        class="ml-5 mt-5 max-w-[175px] rounded-3xl object-contain object-center sm:ml-0 sm:mt-0 sm:rounded-none sm:rounded-l-3xl sm:object-cover"
       />
-      <div>
-        <div class="text-5xl font-bold tracking-tight sm:text-6xl">
-          <span>Hey, I&apos;m</span>
-          <span
-            class="bg-gradient-to-r from-yellow-400 to-yellow-600 bg-clip-text text-transparent"
-          >
-            vasc
-          </span>
+      <div class="flex flex-col p-5 sm:justify-evenly">
+        <div>
+          <div class="text-5xl font-bold tracking-tight sm:text-6xl">
+            <span>Hey, I&apos;m</span>
+            <span
+              class="bg-gradient-to-r from-yellow-400 to-yellow-600 bg-clip-text text-transparent"
+            >
+              vasc
+            </span>
+          </div>
         </div>
-        <DiscordActivity client:load />
+        <p class="mt-3">
+          A <Age client:load /> y/o software engineer from Vienna, Austria{" "}
+          <img
+            src="/assets/austria.svg"
+            class="inline-flex w-5 rounded-sm"
+            alt="Austrian Flag"
+          />
+           . I develop both frontend and backend software. I also love to
+          explore new technologies and tools made by others.
+        </p>
       </div>
     </div>
 
-    <div class="mt-5 text-base leading-relaxed text-gray-300">
-      <p>
-        I&apos;m a <Age client:load /> y/o software engineer from Vienna,
-        Austria{" "}
-        <img
-          src="/assets/austria.svg"
-          class="inline-flex w-5 rounded-sm"
-          alt="Austrian Flag"
-        />
-         . I develop frontend software (e.g. websites) and backend software. I
-        also love to explore new technologies and tools made by others.
-      </p>
-    </div>
-
-    <div class="mb-5 mt-5 text-base leading-relaxed">
-      <h1 class="text-3xl font-bold">What I Use 🧑‍💻</h1>
-      <p class="mt-2 text-gray-300">
-        There are a lot of different technologies that allow me to realize my
-        projects. I love to experiment with new stuff, such as Astro, which I
-        used to build this website.
-      </p>
+    <div>
       <Technologies client:load />
     </div>
 
-    <div class="mb-5 mt-5">
+    <div>
+      <SpotifyActivity client:load />
+    </div>
+
+    <div
+      class="rounded-3xl border border-white/10 bg-white/5 p-5 sm:col-span-2"
+    >
       <h1 class="text-3xl font-bold">What I Built 🔨</h1>
-      <p class="mt-2 text-gray-300">
+      <p class="mt-3">
         I built a lot of things, most of them private. If you want to see all my
         public & open source projects, check out my <a
           href="https://github.com/vascyt"
@@ -66,7 +63,7 @@ import Technologies from "../components/Technologies";
           target="_blank">GitHub profile</a
         >. Below you can find some of my biggest projects.
       </p>
-      <div class="mt-3">
+      <div class="mt-5">
         <Projects client:load />
       </div>
     </div>

@@ -34,7 +34,9 @@ export default function SpotifyActivity() {
           <>
             <FaDiscord className="h-8 w-8 shrink-0 fill-white" />
             <div>
-              <p className="text-md font-bold text-white">@vasc</p>
+              <p className="text-md font-bold text-white">
+                @{activity.discord_user.username}
+              </p>
               <p className="text-sm">{activity.discord_status}</p>
             </div>
             <FiExternalLink className="ml-auto mr-4 h-4 w-4 shrink-0 text-white" />

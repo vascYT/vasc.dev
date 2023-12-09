@@ -37,7 +37,7 @@ export default function SpotifyActivity() {
               <p className="text-md font-bold text-white">@vasc</p>
               <p className="text-sm">{activity.discord_status}</p>
             </div>
-            <FiExternalLink className="ml-auto mr-4 h-4 w-4 text-white" />
+            <FiExternalLink className="ml-auto mr-4 h-4 w-4 shrink-0 text-white" />
           </>
         ) : (
           <>
@@ -73,7 +73,7 @@ export default function SpotifyActivity() {
                 </p>
               </div>
               {activity.spotify.track_id && (
-                <FiExternalLink className="ml-auto mr-4 h-4 w-4" />
+                <FiExternalLink className="ml-auto mr-4 h-4 w-4 shrink-0" />
               )}
               {activity.spotify.album_art_url && (
                 <img

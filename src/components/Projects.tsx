@@ -27,7 +27,7 @@ const projects = [
 
 function Card({ project }: { project: (typeof projects)[0] }) {
   return (
-    <div className="items-strech flex w-full flex-col justify-stretch overflow-hidden rounded-2xl border border-white/10 bg-white/5 shadow  sm:flex-row">
+    <div className="items-strech flex w-full flex-col justify-stretch overflow-hidden rounded-2xl border border-white/10 bg-white/5 shadow sm:flex-row">
       <img
         src={project.thumbnail}
         alt={`${project.name} logo`}

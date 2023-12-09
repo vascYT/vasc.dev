@@ -33,15 +33,13 @@ const { title, description } = Astro.props;
     <title>{title}</title>
   </head>
   <body class="bg-neutral-900 font-sans text-white">
-    <div class="flex min-h-screen flex-row justify-center md:p-0">
-      <div class="w-full md:w-[800px]">
-        <Navbar />
-        <PageAnimation client:load>
-          <main>
-            <slot />
-          </main>
-        </PageAnimation>
-      </div>
+    <div class="mx-auto min-h-screen max-w-[800px]">
+      <Navbar />
+      <PageAnimation client:load>
+        <main>
+          <slot />
+        </main>
+      </PageAnimation>
     </div>
   </body>
 </html>

@@ -75,7 +75,7 @@ function RecentStreams() {
           <img
             src={stream.track.albums[0].image}
             alt="Track album image"
-            className="mx-auto h-16 w-16 rounded-md"
+            className="mx-auto h-16 w-16 rounded-md object-cover"
           />
           <a
             href={`https://open.spotify.com/track/${stream.track.externalIds.spotify[0]}`}

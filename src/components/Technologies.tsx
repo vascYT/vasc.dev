@@ -103,7 +103,7 @@ export default function Technologies() {
   }, []);
 
   return (
-    <div className="grid h-full grid-cols-4 gap-5 rounded-3xl border border-white/10 bg-white/5 p-5">
+    <div className="grid h-full grid-cols-4 gap-7 rounded-3xl border border-white/10 bg-white/5 p-6">
       {data.map((item, i) => (
         <Technology key={i} item={item} />
       ))}

@@ -42,7 +42,7 @@ const links = [
 export default function SocialGallery() {
   return (
     <>
-      <div className="inline-flex h-full flex-auto space-x-4 text-2xl">
+      <div className="flex h-full gap-5">
         {links.map((link) => (
           <a
             href={link.url}
@@ -51,7 +51,7 @@ export default function SocialGallery() {
             rel={link.rel}
             key={link.url}
           >
-            <link.icon />
+            <link.icon className="h-6 w-6" />
           </a>
         ))}
       </div>

@@ -14,7 +14,7 @@ export default function SpotifyActivity() {
   const activity = useLanyardWS("346977366569910274");
 
   return (
-    <div className="flex h-full flex-col justify-stretch gap-5">
+    <div className="flex h-full min-h-[200px] flex-col justify-stretch gap-5">
       <a
         href={
           activity?.discord_user.id

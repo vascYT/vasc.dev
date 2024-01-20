@@ -1,14 +1,10 @@
-name: Github Pages Astro CI
+name: Deploy to GitHub Pages
 
 on:
-  # Trigger the workflow every time you push to the `main` branch
-  # Using a different branch name? Replace `main` with your branch’s name
   push:
     branches: [main]
-  # Allows you to run this workflow manually from the Actions tab on GitHub.
   workflow_dispatch:
 
-# Allow this job to clone the repo and create a page deployment
 permissions:
   contents: read
   pages: write
@@ -19,12 +15,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout your repository using git
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Install, build, and upload your site
-        uses: withastro/action@v0
+        uses: withastro/action@v1
         with:
-          node-version: 18
-          package-manager: npm # Until astro releases support for pnpm 8
+          node-version: 20
+          package-manager: pnpm@latest
 
   deploy:
     needs: build

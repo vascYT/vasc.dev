@@ -1,4 +1,4 @@
-import { FiExternalLink } from "react-icons/fi/index";
+import { ExternalLink } from "lucide-react";
 
 const projects = [
   {
@@ -7,10 +7,7 @@ const projects = [
       "Tracks the playtime of your Discord activities. Frontend built with Next.js, backend with Node.js and PostgreSQL.",
     thumbnail: "/assets/presencedb.png",
     color: "#080808",
-    buttons: [
-      { name: "Website", url: "https://presencedb.com/" },
-      { name: "Twitter", url: "https://twitter.com/presence_db" },
-    ],
+    buttons: [{ name: "Website", url: "https://presencedb.com/" }],
   },
   {
     name: "VShop for Valorant",
@@ -41,13 +38,13 @@ function Card({ project }: { project: (typeof projects)[0] }) {
           {project.buttons.map((button, i) => (
             <a
               key={i}
-              className="mt-3 flex w-fit items-center space-x-1 rounded-full bg-white/20 px-5 py-2 text-sm transition-transform active:scale-95"
+              className="mt-3 flex w-fit items-center space-x-2 rounded-full bg-white/20 px-5 py-2 text-sm transition-transform active:scale-95"
               href={button.url}
               target="_blank"
               rel="noreferrer"
             >
               <span>{button.name}</span>
-              <FiExternalLink />
+              <ExternalLink className="h-4 w-4" />
             </a>
           ))}
         </div>

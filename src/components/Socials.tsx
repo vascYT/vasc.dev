@@ -1,39 +1,39 @@
 import {
-  FaGithub,
-  FaTwitter,
-  FaDiscord,
-  FaEnvelope,
-  FaMastodon,
-} from "react-icons/fa/index";
+  SiGithub,
+  SiBluesky,
+  SiDiscord,
+  SiX,
+} from "@icons-pack/react-simple-icons";
+import { AtSign } from "lucide-react";
 
 const links = [
   {
     url: "https://github.com/vascyt",
-    icon: FaGithub,
+    icon: SiGithub,
     newTab: true,
     rel: "noreferrer",
   },
   {
-    url: "https://twitter.com/vascyt",
-    icon: FaTwitter,
+    url: "https://bsky.app/profile/vasc.dev",
+    icon: SiBluesky,
+    newTab: true,
+    rel: "noreferrer",
+  },
+  {
+    url: "https://x.com/vascyt",
+    icon: SiX,
     newTab: true,
     rel: "noreferrer",
   },
   {
     url: "https://discord.com/users/346977366569910274",
-    icon: FaDiscord,
+    icon: SiDiscord,
     newTab: true,
     rel: "noreferrer",
   },
   {
-    url: "https://fosstodon.org/@vasc",
-    icon: FaMastodon,
-    newTab: true,
-    rel: "me",
-  },
-  {
     url: "mailto:nico@vasc.dev",
-    icon: FaEnvelope,
+    icon: AtSign,
     newTab: false,
     rel: "noreferrer",
   },

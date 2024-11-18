@@ -1,7 +1,7 @@
 import { useLanyardWS } from "use-lanyard";
-import { FaDiscord, FaSpotify } from "react-icons/fa/index";
-import { FiExternalLink } from "react-icons/fi/index";
 import clsx from "clsx";
+import { ExternalLink } from "lucide-react";
+import { SiDiscord, SiSpotify } from "@icons-pack/react-simple-icons";
 
 const statusClasses = {
   online: "bg-green-400/10 text-green-400",
@@ -32,18 +32,18 @@ export default function SpotifyActivity() {
       >
         {activity ? (
           <>
-            <FaDiscord className="h-8 w-8 shrink-0 fill-white" />
+            <SiDiscord className="h-8 w-8 shrink-0 fill-white" />
             <div>
               <p className="text-md font-bold text-white">
                 @{activity.discord_user.username}
               </p>
               <p className="text-sm">{activity.discord_status}</p>
             </div>
-            <FiExternalLink className="ml-auto mr-4 h-4 w-4 shrink-0 text-white" />
+            <ExternalLink className="ml-auto mr-4 h-4 w-4 shrink-0 text-white" />
           </>
         ) : (
           <>
-            <FaDiscord className="h-8 w-8 shrink-0" />
+            <SiDiscord className="h-8 w-8 shrink-0" />
             <div className="w-28 animate-pulse">
               <div className="mt-1 h-4 w-full overflow-hidden rounded-md bg-white/10"></div>
               <div className="mt-1 h-4 w-2/3 overflow-hidden rounded-md bg-white/10"></div>
@@ -67,7 +67,7 @@ export default function SpotifyActivity() {
         {activity ? (
           activity.listening_to_spotify && activity.spotify ? (
             <>
-              <FaSpotify className="h-8 w-8 shrink-0" />
+              <SiSpotify className="h-8 w-8 shrink-0" />
               <div>
                 <p className="text-md font-bold">{activity.spotify.song}</p>
                 <p className="text-grey-300 text-sm">
@@ -75,7 +75,7 @@ export default function SpotifyActivity() {
                 </p>
               </div>
               {activity.spotify.track_id && (
-                <FiExternalLink className="ml-auto mr-4 h-4 w-4 shrink-0" />
+                <ExternalLink className="ml-auto mr-4 h-4 w-4 shrink-0" />
               )}
               {activity.spotify.album_art_url && (
                 <img
@@ -86,13 +86,13 @@ export default function SpotifyActivity() {
             </>
           ) : (
             <>
-              <FaSpotify className="h-8 w-8 shrink-0" />
+              <SiSpotify className="h-8 w-8 shrink-0" />
               <p className="text-md font-bold leading-tight">Nothing playing</p>
             </>
           )
         ) : (
           <>
-            <FaSpotify className="h-8 w-8 shrink-0" />
+            <SiSpotify className="h-8 w-8 shrink-0" />
             <div className="w-28 animate-pulse">
               <div className="mt-1 h-4 w-full overflow-hidden rounded-md bg-white/10"></div>
               <div className="mt-1 h-4 w-2/3 overflow-hidden rounded-md bg-white/10"></div>

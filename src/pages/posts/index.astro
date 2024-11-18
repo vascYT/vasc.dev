@@ -1,6 +1,6 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import { MdOutlineKeyboardArrowRight } from "react-icons/md/index";
+import { ChevronRight } from "lucide-react";
 const posts = (await Astro.glob("./*.md")).filter(
   (post) => !post.frontmatter.hidden,
 );
@@ -24,7 +24,7 @@ const posts = (await Astro.glob("./*.md")).filter(
               </span>
             </p>
           </div>
-          <MdOutlineKeyboardArrowRight className="w-6 h-6" />
+          <ChevronRight className="w-6 h-6" />
         </a>
       ))
     }

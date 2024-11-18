@@ -7,16 +7,15 @@ import {
   SiPnpm,
   SiTailwindcss,
   SiGit,
-  SiRedis,
   SiPostgresql,
-  SiVisualstudiocode,
   SiNextdotjs,
   SiAstro,
-} from "react-icons/si/index";
+  SiDeno,
+  SiDrizzle,
+} from "@icons-pack/react-simple-icons";
 import * as Tooltip from "@radix-ui/react-tooltip";
 
 const initialData = [
-  { name: "Code", icon: SiVisualstudiocode },
   { name: "Git", icon: SiGit },
   { name: "Typescript", icon: SiTypescript, ghtopic: "typescript", repos: [] },
   { name: "Node.js", icon: SiNodedotjs, ghtopic: "nodejs", repos: [] },
@@ -31,8 +30,9 @@ const initialData = [
     ghtopic: "tailwindcss",
     repos: [],
   },
-  { name: "Redis", icon: SiRedis, ghtopic: "redis", repos: [] },
+  { name: "Deno", icon: SiDeno, ghtopic: "deno", repos: [] },
   { name: "Postgres", icon: SiPostgresql, ghtopic: "postgresql", repos: [] },
+  { name: "Drizzle", icon: SiDrizzle, ghtopic: "drizzle", repos: [] },
 ];
 
 function Technology({ item }: { item: (typeof initialData)[0] }) {
@@ -68,7 +68,7 @@ function Technology({ item }: { item: (typeof initialData)[0] }) {
                     ))}
                   </ul>
                 ) : (
-                  <p>Used in private/closed source projects.</p>
+                  <p>Used in closed source projects.</p>
                 )
               ) : (
                 <p>Used in every project.</p>

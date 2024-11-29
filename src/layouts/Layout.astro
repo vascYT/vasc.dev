@@ -31,9 +31,11 @@ const { title, description } = Astro.props;
     }
     <meta name="theme-color" content="#FF9C17" />
     <script
-      async
-      src="https://analytics.vasc.cloud/script.js"
-      data-website-id="42a02de4-e2c9-4cc1-8230-f57b74901fde"></script>
+      defer
+      data-domain={import.meta.env.PUBLIC_PLAUSIBLE_DOMAIN}
+      src={`${
+        import.meta.env.PUBLIC_PLAUSIBLE_URL
+      }/js/script.outbound-links.js`}></script>
     <title>{title}</title>
   </head>
   <body class="bg-neutral-900 font-sans text-white">

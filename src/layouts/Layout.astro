@@ -9,6 +9,7 @@ export interface Props {
 }
 
 const { title, description } = Astro.props;
+const { PUBLIC_PLAUSIBLE_DOMAIN, PUBLIC_PLAUSIBLE_URL } = import.meta.env;
 ---
 
 <!DOCTYPE html>
@@ -30,12 +31,15 @@ const { title, description } = Astro.props;
       )
     }
     <meta name="theme-color" content="#FF9C17" />
-    <script
-      defer
-      data-domain={import.meta.env.PUBLIC_PLAUSIBLE_DOMAIN}
-      src={`${
-        import.meta.env.PUBLIC_PLAUSIBLE_URL
-      }/js/script.outbound-links.js`}></script>
+    {
+      PUBLIC_PLAUSIBLE_DOMAIN && PUBLIC_PLAUSIBLE_URL && (
+        <script
+          defer
+          data-domain={PUBLIC_PLAUSIBLE_DOMAIN}
+          src={`${PUBLIC_PLAUSIBLE_URL}/js/script.outbound-links.js`}
+        />
+      )
+    }
     <title>{title}</title>
   </head>
   <body class="bg-neutral-900 font-sans text-white">

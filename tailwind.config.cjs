@@ -1,10 +1,12 @@
+import defaultTheme from "tailwindcss/defaultTheme";
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
     fontFamily: {
-      sans: ["Inter Variable", "sans-serif"],
-      fira: ["Fira Mono", "sans-serif"],
+      sans: ["Inter Variable", ...defaultTheme.fontFamily.sans],
+      fira: ["Fira Mono", ...defaultTheme.fontFamily.sans],
     },
     extend: {
       spacing: {

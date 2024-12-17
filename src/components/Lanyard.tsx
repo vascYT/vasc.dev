@@ -10,47 +10,55 @@ const statusClasses = {
   offline: "bg-white/5 text-gray-400",
 };
 
-export default function SpotifyActivity() {
+export default function Lanyard({
+  hideStatus = false,
+  hideLink = false,
+}: {
+  hideStatus?: boolean;
+  hideLink?: boolean;
+}) {
   const activity = useLanyardWS("346977366569910274");
 
   return (
-    <div className="flex h-full min-h-[200px] flex-col justify-stretch gap-5">
-      <a
-        href={
-          activity?.discord_user.id
-            ? `https://discord.com/users/${activity.discord_user.id}`
-            : undefined
-        }
-        target="_blank"
-        className={clsx(
-          "flex h-full items-center gap-3 overflow-hidden rounded-3xl border border-white/10 px-3",
-          activity?.discord_status
-            ? statusClasses[activity.discord_status]
-            : "bg-white/5",
-          activity?.discord_user.id && "transition-transform active:scale-95",
-        )}
-      >
-        {activity ? (
-          <>
-            <SiDiscord className="h-8 w-8 shrink-0 fill-white" />
-            <div>
-              <p className="text-md font-bold text-white">
-                @{activity.discord_user.username}
-              </p>
-              <p className="text-sm">{activity.discord_status}</p>
-            </div>
-            <ExternalLink className="ml-auto mr-4 h-4 w-4 shrink-0 text-white" />
-          </>
-        ) : (
-          <>
-            <SiDiscord className="h-8 w-8 shrink-0" />
-            <div className="w-28 animate-pulse">
-              <div className="mt-1 h-4 w-full overflow-hidden rounded-md bg-white/10"></div>
-              <div className="mt-1 h-4 w-2/3 overflow-hidden rounded-md bg-white/10"></div>
-            </div>
-          </>
-        )}
-      </a>
+    <div className="flex h-full flex-col justify-stretch gap-5">
+      {!hideStatus && (
+        <a
+          href={
+            activity?.discord_user.id
+              ? `https://discord.com/users/${activity.discord_user.id}`
+              : undefined
+          }
+          target="_blank"
+          className={clsx(
+            "flex h-full items-center gap-3 overflow-hidden rounded-3xl border border-white/10 px-3",
+            activity?.discord_status
+              ? statusClasses[activity.discord_status]
+              : "bg-white/5",
+            activity?.discord_user.id && "transition-transform active:scale-95",
+          )}
+        >
+          {activity ? (
+            <>
+              <SiDiscord className="h-8 w-8 shrink-0 fill-white" />
+              <div>
+                <p className="text-md font-bold text-white">
+                  @{activity.discord_user.username}
+                </p>
+                <p className="text-sm">{activity.discord_status}</p>
+              </div>
+              <ExternalLink className="ml-auto mr-4 h-4 w-4 shrink-0 text-white" />
+            </>
+          ) : (
+            <>
+              <SiDiscord className="h-8 w-8 shrink-0" />
+              <div className="w-28 animate-pulse">
+                <div className="mt-1 h-4 w-full overflow-hidden rounded-md bg-white/10"></div>
+                <div className="mt-1 h-4 w-2/3 overflow-hidden rounded-md bg-white/10"></div>
+              </div>
+            </>
+          )}
+        </a>
+      )}
 
       <a
         href={
@@ -68,13 +76,15 @@ export default function SpotifyActivity() {
           activity.listening_to_spotify && activity.spotify ? (
             <>
               <SiSpotify className="h-8 w-8 shrink-0" />
-              <div>
-                <p className="text-md font-bold">{activity.spotify.song}</p>
-                <p className="text-grey-300 text-sm">
+              <div className="w-[75%]">
+                <p className="text-md truncate font-bold">
+                  {activity.spotify.song}
+                </p>
+                <p className="text-grey-300 truncate text-sm">
                   by {activity.spotify.artist}
                 </p>
               </div>
-              {activity.spotify.track_id && (
+              {!hideLink && activity.spotify.track_id && (
                 <ExternalLink className="ml-auto mr-4 h-4 w-4 shrink-0" />
               )}
               {activity.spotify.album_art_url && (

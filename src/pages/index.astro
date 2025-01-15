@@ -1,7 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Lanyard from "../components/Lanyard";
-import Projects from "../components/Projects";
+import Projects from "../components/Projects.astro";
 import Age from "../components/Age";
 import Technologies from "../components/Technologies";
 ---
@@ -56,15 +56,15 @@ import Technologies from "../components/Technologies";
     >
       <h1 class="text-3xl font-bold">What I Built 🔨</h1>
       <p class="mt-3">
-        I built a lot of things, most of them private. If you want to see all my
-        public & open source projects, check out my <a
+        These are the top projects I am currently working on. You can see the
+        rest on my <a
           href="https://github.com/vascyt"
           class="text-yellow-400 underline underline-offset-4"
           target="_blank">GitHub profile</a
-        >. Below you can find some of my biggest projects.
+        >.
       </p>
       <div class="mt-5">
-        <Projects client:load />
+        <Projects />
       </div>
     </div>
   </div>

@@ -1,0 +1,86 @@
+---
+import { Image } from "astro:assets";
+import { ExternalLink } from "lucide-react";
+
+import PresenceDBImg from "../assets/presencedb.png";
+import VShopImg from "../assets/vshop.png";
+import BeRealMemoriesImg from "../assets/bereal-memories.png";
+import WoBahnImg from "../assets/wobahn.png";
+
+const projects = [
+  {
+    name: "PresenceDB",
+    description:
+      "A web app that displays the playtime of your Discord activities. Built with Next.js & PostgreSQL.",
+    image: PresenceDBImg,
+    color: "#080808",
+    buttons: [{ name: "Website", url: "https://presencedb.com/" }],
+  },
+  {
+    name: "VShop for Valorant",
+    description:
+      "A mobile app that displays your Valorant in-game shop. Built with Expo & React Native Paper.",
+    image: VShopImg,
+    color: "#fa4454",
+    buttons: [
+      { name: "Website", url: "https://vshop.one/" },
+      { name: "GitHub", url: "https://github.com/VShopApp/mobile" },
+    ],
+  },
+  {
+    name: "BeReal Memories",
+    description:
+      "A web app where you can view and export your BeReal memories. Built with Next.js, tRPC & shadcn/ui.",
+    image: BeRealMemoriesImg,
+    color: "#635e6c",
+    buttons: [
+      { name: "GitHub", url: "https://github.com/vascYT/bereal-memories" },
+    ],
+  },
+  {
+    name: "WoBahn",
+    description:
+      "A web app that displays the approximate locations of all metro lines in Vienna. Built with Astro, Leaflet & Server-Sent Events.",
+    image: WoBahnImg,
+    color: "#51d0fc",
+    buttons: [
+      { name: "Website", url: "https://wobahn.vasc.cloud" },
+      { name: "GitHub", url: "https://github.com/vascYT/wobahn" },
+    ],
+  },
+];
+---
+
+<div class="space-y-4">
+  {
+    projects.map((project) => (
+      <div class="items-strech flex w-full flex-col justify-stretch overflow-hidden rounded-2xl border border-white/10 bg-white/5 shadow sm:flex-row">
+        <Image
+          src={project.image}
+          alt={`${project.name} logo`}
+          style={{ backgroundColor: project.color }}
+          class="h-40 w-full rounded-t-2xl object-contain object-center p-10 sm:max-h-none sm:w-40 sm:rounded-l-2xl sm:rounded-t-none"
+        />
+        <div class="flex w-full flex-col justify-between px-4 py-3">
+          <div>
+            <h1 class="text-xl font-semibold">{project.name}</h1>
+            <p class="mt-2 text-gray-100">{project.description}</p>
+          </div>
+          <div class="flex flex-row flex-wrap items-center gap-2">
+            {project.buttons.map((button) => (
+              <a
+                class="mt-3 flex w-fit items-center space-x-2 rounded-full bg-white/20 px-5 py-2 text-sm transition-transform active:scale-95"
+                href={button.url}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <ExternalLink className="h-4 w-4" />
+                <span>{button.name}</span>
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+    ))
+  }
+</div>

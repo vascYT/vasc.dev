@@ -6,6 +6,7 @@ import PresenceDBImg from "../assets/presencedb.png";
 import VShopImg from "../assets/vshop.png";
 import BeRealMemoriesImg from "../assets/bereal-memories.png";
 import WoBahnImg from "../assets/wobahn.png";
+import WoBahnBgImg from "../assets/wobahn-bg.png";
 
 const projects = [
   {
@@ -28,6 +29,17 @@ const projects = [
     ],
   },
   {
+    name: "WoBahn",
+    description:
+      "A web app that displays the approximate locations of all metro lines in Vienna. Built with Astro, Leaflet & Server-Sent Events.",
+    image: WoBahnImg,
+    backgroundImage: WoBahnBgImg.src,
+    buttons: [
+      { name: "Website", url: "https://wobahn.vasc.dev" },
+      { name: "GitHub", url: "https://github.com/vascYT/wobahn" },
+    ],
+  },
+  {
     name: "BeReal Memories",
     description:
       "A web app where you can view and export your BeReal memories. Built with Next.js, tRPC & shadcn/ui.",
@@ -35,17 +47,6 @@ const projects = [
     color: "#635e6c",
     buttons: [
       { name: "GitHub", url: "https://github.com/vascYT/bereal-memories" },
-    ],
-  },
-  {
-    name: "WoBahn",
-    description:
-      "A web app that displays the approximate locations of all metro lines in Vienna. Built with Astro, Leaflet & Server-Sent Events.",
-    image: WoBahnImg,
-    color: "#51d0fc",
-    buttons: [
-      { name: "Website", url: "https://wobahn.vasc.cloud" },
-      { name: "GitHub", url: "https://github.com/vascYT/wobahn" },
     ],
   },
 ];
@@ -58,7 +59,15 @@ const projects = [
         <Image
           src={project.image}
           alt={`${project.name} logo`}
-          style={{ backgroundColor: project.color }}
+          style={
+            project.color
+              ? { backgroundColor: project.color }
+              : {
+                  backgroundImage: `url(${project.backgroundImage})`,
+                  backgroundPosition: "center",
+                  backgroundSize: "cover",
+                }
+          }
           class="h-40 w-full rounded-t-2xl object-contain object-center p-10 sm:max-h-none sm:w-40 sm:rounded-l-2xl sm:rounded-t-none"
         />
         <div class="flex w-full flex-col justify-between px-4 py-3">

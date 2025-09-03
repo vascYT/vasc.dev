@@ -23,6 +23,6 @@ This project has been out for about nine months now. Since then, I have complete
 
 <img alt="WoBahn Demo 1" src="https://r2.vasc.dev/images/IVQ1W.gif" width="300">
 
-**Pro Tip**: You can actually add WoBahn to your phone home screen for ease of access on Android ([Tutorial](https://r2.vasc.dev/images/swAMH.png)) and iOS ([Tutorial](https://r2.vasc.dev/images/5P7FA.png))!
+**Pro Tip**: You can actually add WoBahn to your phone's home screen for ease of access! Here is a tutorial for [Android](https://r2.vasc.dev/images/swAMH.png) and [iOS](https://r2.vasc.dev/images/5P7FA.png).
 
 Thanks for reading 💖 If you are interested in this project, you can [start using WoBahn](https://wobahn.vasc.dev) right away, or look at the [GitHub](https://github.com/vascYT/WoBahn) page, since this project is completely open source.

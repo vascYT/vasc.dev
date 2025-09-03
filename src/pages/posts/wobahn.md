@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/PostLayout.astro
 title: The Making of WoBahn
+description: A Viennese subway tracker
 date: 2025-09-03
 ---
 

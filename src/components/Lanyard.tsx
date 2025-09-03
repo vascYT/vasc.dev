@@ -90,7 +90,7 @@ export default function Lanyard({
               {activity.spotify.album_art_url && (
                 <img
                   src={activity.spotify.album_art_url}
-                  className="absolute left-0 top-0 -z-10 h-full w-full object-cover object-center blur brightness-50"
+                  className="absolute left-0 top-0 -z-10 h-full w-full object-cover object-center blur-sm brightness-50"
                 />
               )}
             </>

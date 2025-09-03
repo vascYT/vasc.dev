@@ -46,7 +46,7 @@ function Technology({ item }: { item: (typeof initialData)[0] }) {
         </Tooltip.Trigger>
         <Tooltip.Portal>
           <Tooltip.Content
-            className="animate-slideUpAndFade rounded-md border border-white/30 bg-neutral-900 text-sm shadow"
+            className="animate-slide-up-and-fade rounded-md border border-white/30 bg-neutral-900 text-sm shadow-sm"
             sideOffset={10}
           >
             <h3 className="px-3 py-1 text-lg font-bold">{item.name}</h3>

@@ -18,7 +18,8 @@ const posts = (await Astro.glob("./*.md")).filter(
           <div>
             <h2 class="text-xl font-bold">{post.frontmatter.title}</h2>
             <p class="text-sm font-light">
-              {post.frontmatter.description} -
+              {post.frontmatter.description &&
+                `${post.frontmatter.description} -`}
               <span class="italic">
                 {new Date(post.frontmatter.date).toLocaleDateString()}
               </span>

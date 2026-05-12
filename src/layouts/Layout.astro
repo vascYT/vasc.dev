@@ -10,10 +10,23 @@ export interface Props {
 }
 
 const { title, description } = Astro.props;
-const { PUBLIC_PLAUSIBLE_DOMAIN, PUBLIC_PLAUSIBLE_URL } = import.meta.env;
 ---
 
 <!DOCTYPE html>
+<script>
+  import { init } from "@plausible-analytics/tracker";
+
+  const { PUBLIC_PLAUSIBLE_ENDPOINT, PUBLIC_PLAUSIBLE_DOMAIN } = import.meta
+    .env;
+
+  if (PUBLIC_PLAUSIBLE_ENDPOINT && PUBLIC_PLAUSIBLE_DOMAIN) {
+    init({
+      domain: PUBLIC_PLAUSIBLE_DOMAIN,
+      endpoint: PUBLIC_PLAUSIBLE_ENDPOINT,
+    });
+  }
+</script>
+
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -32,19 +45,10 @@ const { PUBLIC_PLAUSIBLE_DOMAIN, PUBLIC_PLAUSIBLE_URL } = import.meta.env;
       )
     }
     <meta name="theme-color" content="#FF9C17" />
-    {
-      PUBLIC_PLAUSIBLE_DOMAIN && PUBLIC_PLAUSIBLE_URL && (
-        <script
-          defer
-          data-domain={PUBLIC_PLAUSIBLE_DOMAIN}
-          src={`${PUBLIC_PLAUSIBLE_URL}/js/script.outbound-links.js`}
-        />
-      )
-    }
     <title>{title}</title>
   </head>
   <body class="bg-neutral-900 font-sans text-white">
-    <div class="mx-auto min-h-screen max-w-[800px]">
+    <div class="mx-auto min-h-screen max-w-200">
       <Navbar />
       <PageAnimation client:load>
         <main>

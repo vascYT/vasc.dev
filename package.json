@@ -15,6 +15,7 @@
     "@fontsource-variable/inter": "^5.0.5",
     "@fontsource/fira-mono": "^5.2.7",
     "@icons-pack/react-simple-icons": "^10.1.0",
+    "@plausible-analytics/tracker": "^0.4.5",
     "@radix-ui/react-tooltip": "^1.0.7",
     "@tailwindcss/vite": "^4.3.0",
     "astro": "^6.3.1",

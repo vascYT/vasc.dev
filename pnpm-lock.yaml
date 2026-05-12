@@ -23,6 +23,9 @@ importers:
       '@icons-pack/react-simple-icons':
         specifier: ^10.1.0
         version: 10.1.0(react@18.0.0)
+      '@plausible-analytics/tracker':
+        specifier: ^0.4.5
+        version: 0.4.5
       '@radix-ui/react-tooltip':
         specifier: ^1.0.7
         version: 1.0.7(@types/react-dom@18.0.6)(@types/react@18.0.21)(react-dom@18.0.0(react@18.0.0))(react@18.0.0)
@@ -587,6 +590,9 @@ packages:
 
   '@oslojs/encoding@1.1.0':
     resolution: {integrity: sha512-70wQhgYmndg4GCPxPPxPGevRKqTIJ2Nh4OkiMWmDAVYsTQ+Ta7Sq+rPevXyXGdzr30/qZBnyOalCszoMxlyldQ==}
+
+  '@plausible-analytics/tracker@0.4.5':
+    resolution: {integrity: sha512-6BfAGejXY+YA3Cw6LYT2Zpn4hTxDtPQAawFsYUsQCOg78wIS5C4deAGXTfJffa5VleMWITv5lpJ/EYuQBl1tPA==}
 
   '@radix-ui/primitive@1.0.1':
     resolution: {integrity: sha512-yQ8oGX2GVsEYMWGxcovu1uGWPCxV5BFfeeYxqPmuAzUyLT9qmaMXSAhXpb0WrspIeqYzdJpkh2vHModJPgRIaw==}
@@ -2726,6 +2732,8 @@ snapshots:
       '@jridgewell/sourcemap-codec': 1.5.0
 
   '@oslojs/encoding@1.1.0': {}
+
+  '@plausible-analytics/tracker@0.4.5': {}
 
   '@radix-ui/primitive@1.0.1':
     dependencies:

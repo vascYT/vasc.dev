@@ -1,9 +1,4 @@
-import {
-  SiGithub,
-  SiBluesky,
-  SiDiscord,
-  SiX,
-} from "@icons-pack/react-simple-icons";
+import { SiGithub, SiBluesky, SiDiscord } from "@icons-pack/react-simple-icons";
 import { AtSign } from "lucide-react";
 
 const links = [
@@ -16,12 +11,6 @@ const links = [
   {
     url: "https://bsky.app/profile/vasc.dev",
     icon: SiBluesky,
-    newTab: true,
-    rel: "noreferrer",
-  },
-  {
-    url: "https://x.com/vascyt",
-    icon: SiX,
     newTab: true,
     rel: "noreferrer",
   },
